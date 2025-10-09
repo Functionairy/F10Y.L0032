@@ -13,7 +13,7 @@ namespace F10Y.L0032
         /// <summary>
         /// Quality-of-life overload for <see cref="Open_Directory_InExplorer(string)"/>.
         /// </summary>
-        public void Open(string directoryPath)
+        void Open(string directoryPath)
         {
             this.Open_Directory_InExplorer(directoryPath);
         }
@@ -24,7 +24,7 @@ namespace F10Y.L0032
         /// Strangley, this only works when this command opened the window. If the window was opened "naturally" (not by this command), then a new window will still be created.
         /// </summary>
         /// <param name="directoryPath"></param>
-        public void Open_Directory_InExplorer(string directoryPath)
+        void Open_Directory_InExplorer(string directoryPath)
         {
             /// <remarks>
             /// * Use the /c character to tell cmd.exe that this text is a command.
@@ -41,7 +41,7 @@ namespace F10Y.L0032
                 arguments);
         }
 
-        public void Open_Directories_InExplorer(IEnumerable<string> directoryPaths)
+        void Open_Directories_InExplorer(IEnumerable<string> directoryPaths)
         {
             foreach (var directoryPath in directoryPaths)
             {
@@ -49,7 +49,7 @@ namespace F10Y.L0032
             }
         }
 
-        public void Open_Directories_InExplorer(params string[] directoryPaths)
+        void Open_Directories_InExplorer(params string[] directoryPaths)
         {
             this.Open_Directories_InExplorer(directoryPaths.AsEnumerable());
         }
